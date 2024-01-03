@@ -2,7 +2,9 @@
 
 // Add this line to import the CSS styles
 import { useEffect, useState } from "react";
-import { Button, Navbar, Toggle } from "react-daisyui";
+import { Button, Divider, Navbar, Toggle } from "react-daisyui";
+
+import { kaushan_script } from "@/lib/fonts";
 
 export default function Headerbar() {
   const [theme, setTheme] = useState<string>("everforest");
@@ -15,12 +17,13 @@ export default function Headerbar() {
   }, [theme]);
 
   return (
-    <Navbar className="justify-between bg-secondary">
-      <Button className="glass mx-2 bg-secondary" size="md">
-        <a href="/" className="text- text-2xl font-bold">
+    <Navbar className="glass justify-between bg-secondary">
+      <div className={`mx-8 ${kaushan_script.className}`}>
+        <Divider>-</Divider>
+        <a href="/" className="text-2xl">
           Shih-Chi Shao
         </a>
-      </Button>
+      </div>
       {/* <Divider horizontal /> */}
 
       <div className="gap-2 px-2">
