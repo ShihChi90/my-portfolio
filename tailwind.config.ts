@@ -25,8 +25,6 @@ const config: Config = {
           error: "#e67e80",
         },
       },
-      "light",
-      "dark",
       {
         lightforest: {
           primary: "#a7c080",
@@ -40,19 +38,21 @@ const config: Config = {
           error: "#e67e80",
         },
       },
-      {
-        mytheme: {
-          primary: "#facc15",
-          secondary: "#84cc16",
-          accent: "#3b82f6",
-          neutral: "#f5f5f4",
-          "base-100": "#f5f5f4",
-          info: "#78716c",
-          success: "#d9f99d",
-          warning: "#fed7aa",
-          error: "#fca5a5",
-        },
-      },
+      // "light",
+      // "dark",
+      // {
+      //   mytheme: {
+      //     primary: "#facc15",
+      //     secondary: "#84cc16",
+      //     accent: "#3b82f6",
+      //     neutral: "#f5f5f4",
+      //     "base-100": "#f5f5f4",
+      //     info: "#78716c",
+      //     success: "#d9f99d",
+      //     warning: "#fed7aa",
+      //     error: "#fca5a5",
+      //   },
+      // },
     ], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
     darkTheme: "everforest", // name of one of the included themes for dark mode
     base: true, // applies background color and foreground color for root element by default
