@@ -38,8 +38,8 @@ export default function Home() {
   });
 
   return (
-    <main className="flex w-full flex-col overscroll-none bg-neutral">
-      <div className="z-20">
+    <main className="flex w-full flex-col items-center justify-center overscroll-none bg-neutral">
+      <div className="z-20 w-full">
         <Headerbar />
       </div>
       <div className="flex max-h-[764px] w-full flex-col items-center justify-center">
@@ -66,11 +66,13 @@ export default function Home() {
           <IoIosInformationCircle color="white" size="1.5rem" />
         </Tooltip>
       </div>
-      <Carousel display="sequential" className="w-[90%]">
-        {images.map((image, index) => (
-          <Carousel.Item src={image.src} className="" key={index} />
-        ))}
-      </Carousel>
+      <div className="my-4 max-w-[80%] md:max-w-[50%]">
+        <Carousel display="numbered" width="full">
+          {images.map((image, index) => (
+            <Carousel.Item src={image.src} className="rounded" key={index} />
+          ))}
+        </Carousel>
+      </div>
       <motion.div
         className="progress z-10"
         style={{
