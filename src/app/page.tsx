@@ -39,14 +39,16 @@ export default function Home() {
 
   return (
     <main className="flex w-full flex-col overscroll-none bg-neutral">
-      <Headerbar />
+      <div className="z-20">
+        <Headerbar />
+      </div>
       <div className="flex max-h-[764px] w-full flex-col items-center justify-center">
         <Skeleton className="w-full">
           <Mask src={LandingImage.src} className="w-full rounded-none" />
         </Skeleton>
 
         <div
-          className={`${kaushan_script.className} absolute top-16 z-10 md:top-44`}
+          className={`${kaushan_script.className} absolute top-24 z-10 md:top-44`}
         >
           <p
             className={`text-4xl text-info md:text-6xl `}
@@ -64,19 +66,27 @@ export default function Home() {
           <IoIosInformationCircle color="white" size="1.5rem" />
         </Tooltip>
       </div>
-      <Carousel
-        display="sequential"
-        className="my-0 max-h-screen w-full rounded-none"
-      >
+      <Carousel display="sequential" className="w-[90%]">
         {images.map((image, index) => (
-          <Carousel.Item
-            src={image.src}
-            className="w-full rounded-none"
-            key={index}
-          />
+          <Carousel.Item src={image.src} className="" key={index} />
         ))}
       </Carousel>
-      <motion.div className="progress" style={{ scaleX }} />
+      <motion.div
+        className="progress z-10"
+        style={{
+          rotate: 0,
+          scaleY: scaleX,
+          position: "fixed",
+          // top: 0,
+          right: 0,
+          width: "8px", // Set the width of the vertical bar
+          backgroundColor: "rgba(0, 0, 0, 0.3)", // Change the color and transparency here
+          transformOrigin: "top right",
+          transform: "scaleY(0)", // Initially hide the bar
+          // transition: "transform 0.3s ease-in-out", // Add transition for smooth scaling
+          height: "100vh", // Set the height of the vertical bar to full viewport height
+        }}
+      />
     </main>
   );
 }
