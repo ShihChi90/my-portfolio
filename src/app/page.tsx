@@ -30,12 +30,13 @@ import LandingImage from "@/lib/images/LandingImage.jpg";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
-  const { scrollYProgress } = useScroll();
+  const { scrollX, scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
+  const top = useTransform(scaleX, [0, 1], [0, window.innerHeight - 100]);
 
   return (
     <main className="flex w-full flex-col items-center justify-center overscroll-none bg-neutral">
@@ -74,19 +75,15 @@ export default function Home() {
         </Carousel>
       </div>
       <motion.div
-        className="progress z-10"
+        className="z-10"
         style={{
-          rotate: 0,
-          scaleY: scaleX,
           position: "fixed",
-          // top: 0,
+          top: top,
           right: 0,
           width: "8px", // Set the width of the vertical bar
           backgroundColor: "rgba(0, 0, 0, 0.3)", // Change the color and transparency here
-          transformOrigin: "top right",
-          transform: "scaleY(0)", // Initially hide the bar
-          // transition: "transform 0.3s ease-in-out", // Add transition for smooth scaling
-          height: "100vh", // Set the height of the vertical bar to full viewport height
+          transformOrigin: "top",
+          height: 100, // Set the height of the vertical bar to full viewport height
         }}
       />
     </main>
