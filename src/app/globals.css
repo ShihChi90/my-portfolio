@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Set different default font sizes for different window sizes */
+@screen sm {
+  html {
+    font-size: 12px;
+  }
+}
+
+@screen md {
+  html {
+    font-size: 16px;
+  }
+}
