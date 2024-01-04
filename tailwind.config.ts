@@ -32,7 +32,7 @@ const config: Config = {
           accent: "#d699b6",
           neutral: "#f2efdf",
           "base-100": "#f2efdf",
-          info: "#9da9a0",
+          info: "#ddd8be",
           success: "#7fbbb3",
           warning: "#e69875",
           error: "#e67e80",
