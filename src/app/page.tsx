@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   Card,
   Carousel,
@@ -31,12 +31,22 @@ import LandingImage from "@/lib/images/LandingImage.jpg";
 export default function Home() {
   const { theme, setTheme } = useTheme();
   const { scrollX, scrollYProgress } = useScroll();
+  const [windowHeight, setWindowHeight] = useState(0);
+
+  useEffect(() => {
+    const handleResize = () => setWindowHeight(window.innerHeight);
+    if (typeof window !== "undefined") {
+      setWindowHeight(window.innerHeight);
+      window.addEventListener("resize", handleResize);
+    }
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001,
   });
-  const top = useTransform(scaleX, [0, 1], [0, window.innerHeight - 100]);
+  const top = useTransform(scaleX, [0, 1], [0, windowHeight - 100]);
 
   return (
     <main className="flex w-full flex-col items-center justify-center overscroll-none bg-neutral">
