@@ -49,14 +49,12 @@ export default function Home() {
   const top = useTransform(scaleX, [0, 1], [0, windowHeight - 100]);
 
   return (
-    <main className="flex w-full flex-col items-center justify-center overflow-auto bg-neutral">
+    <main className="flex flex-col items-center justify-center bg-neutral">
       <div className="z-20 w-full">
         <Headerbar />
       </div>
-      <div
-        className={`flex max-h-[768px] w-full flex-col items-center justify-center`}
-      >
-        <Skeleton>
+      <div className={`flex flex-col items-center justify-center`}>
+        <Skeleton className="max-h-[768px]">
           <Mask
             alt="An Image of Nanhu Cirque in mist view from above"
             src={LandingImage.src}
@@ -82,12 +80,15 @@ export default function Home() {
           <IoIosInformationCircle color="white" size="1.5rem" />
         </Tooltip>
       </div>
-      <div className="my-4 flex h-auto flex-wrap justify-center gap-8 bg-secondary px-4 py-8 md:px-24">
-        <section className="bottom-0 flex flex-col text-left md:max-w-[45%]">
+      <div className="my-4 flex h-auto flex-wrap justify-center gap-8 bg-secondary p-8 md:pl-16">
+        <section className="flex flex-col text-left md:max-w-[55%]">
           <h2 className="mb-4 text-2xl font-bold">About Me</h2>
           <p className="hyphens-auto text-lg">
-            Hi, I'm <a className=" text-primary">Shih-Chi (Charles) Shao</a>, a
-            hobbist photographer with specialty in landscape and urban
+            Hi, I'm{" "}
+            <a className="font-semibold underline decoration-primary">
+              Shih-Chi (Charles) Shao
+            </a>
+            , a hobbist photographer with specialty in landscape and urban
             photograpy. <br />
             <br />
             I love finding the unseen beauty in the world and capturing it with
@@ -98,7 +99,7 @@ export default function Home() {
             applications with enjoyable user interface and user experience.
           </p>
         </section>
-        <section className="flex flex-col items-center md:w-[30%]">
+        <section className="flex flex-col items-center md:w-[40%]">
           <Mask
             variant="circle"
             src={ProfileImage.src}
@@ -111,10 +112,10 @@ export default function Home() {
               shao2001@gmail.com
             </Link>
           </div>
-          <div className="flex flex-row gap-2 text-lg">
+          {/* <div className="flex flex-row gap-2 text-lg">
             <p>{"Phone:"}</p>
             <Link target="_blank">0987-654-321</Link>
-          </div>
+          </div> */}
         </section>
       </div>
       <div className="mb-4 max-w-[80%] md:max-w-[50%]">
