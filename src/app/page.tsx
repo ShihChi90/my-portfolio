@@ -49,16 +49,17 @@ export default function Home() {
   const top = useTransform(scaleX, [0, 1], [0, windowHeight - 100]);
 
   return (
-    <main className="flex w-full flex-col items-center justify-center overscroll-none bg-neutral">
+    <main className="flex w-full flex-col items-center justify-center overflow-auto bg-neutral">
       <div className="z-20 w-full">
         <Headerbar />
       </div>
-      <div className="flex max-h-[764px] w-full flex-col items-center justify-center">
-        <Skeleton className="w-full">
+      <div
+        className={`flex max-h-[768px] w-full flex-col items-center justify-center`}
+      >
+        <Skeleton>
           <Mask
             alt="An Image of Nanhu Cirque in mist view from above"
             src={LandingImage.src}
-            className="w-full rounded-none"
           />
         </Skeleton>
 
@@ -85,23 +86,23 @@ export default function Home() {
         <section className="bottom-0 flex flex-col text-left md:max-w-[50%]">
           <h2 className="mb-4 text-2xl font-bold">About Me</h2>
           <p className="hyphens-auto text-lg">
-            Hi, I'm <a className=" text-primary">Shih-Chi (Charles) Shao</a>.
-            I'm a hobbist photographer with specialty in landscape and urban
+            Hi, I'm <a className=" text-primary">Shih-Chi (Charles) Shao</a>, a
+            hobbist photographer with specialty in landscape and urban
             photograpy. <br />
             <br />
             I love finding the unseen beauty in the world and capturing it with
             my camera. With my knowledge in photography and design, I want to
-            create inmersive experience that are not only aesthetically pleasing
+            create immersive experience that are not only aesthetically pleasing
             but also meaningful. <br />
             Recently I've start to learn web developing, I'm pursuing to build
             applications with enjoyable user interface and user experience.
           </p>
         </section>
-        <section className=" flex flex-col items-center md:w-[30%]">
+        <section className="flex flex-col items-center md:w-[30%]">
           <Mask
             variant="circle"
             src={ProfileImage.src}
-            className="my-4 max-w-[80%] rounded-none"
+            className="mb-4 max-w-[60%] rounded-none md:mt-4 md:max-w-[80%]"
           />
           <h2 className="text-2xl font-bold">Contact Information</h2>
           <div className="flex flex-row gap-2 text-lg">
