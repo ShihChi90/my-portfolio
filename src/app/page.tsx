@@ -83,7 +83,7 @@ export default function Home() {
         </Tooltip>
       </div>
       <div className="my-4 flex h-auto flex-wrap justify-center gap-8 bg-secondary px-4 py-8 md:px-24">
-        <section className="bottom-0 flex flex-col text-left md:max-w-[50%]">
+        <section className="bottom-0 flex flex-col text-left md:max-w-[45%]">
           <h2 className="mb-4 text-2xl font-bold">About Me</h2>
           <p className="hyphens-auto text-lg">
             Hi, I'm <a className=" text-primary">Shih-Chi (Charles) Shao</a>, a
@@ -94,7 +94,7 @@ export default function Home() {
             my camera. With my knowledge in photography and design, I want to
             create immersive experience that are not only aesthetically pleasing
             but also meaningful. <br />
-            Recently I've start to learn web developing, I'm pursuing to build
+            Recently I've started to learn web developing, I'm pursuing to build
             applications with enjoyable user interface and user experience.
           </p>
         </section>
@@ -102,7 +102,7 @@ export default function Home() {
           <Mask
             variant="circle"
             src={ProfileImage.src}
-            className="mb-4 max-w-[60%] rounded-none md:mt-4 md:max-w-[80%]"
+            className="mb-4 max-w-[60%] rounded-none"
           />
           <h2 className="text-2xl font-bold">Contact Information</h2>
           <div className="flex flex-row gap-2 text-lg">

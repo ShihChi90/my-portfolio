@@ -27,7 +27,7 @@ const config: Config = {
       },
       {
         lightforest: {
-          primary: "#a7c080",
+          primary: "#93b259",
           secondary: "#e5e6c5",
           accent: "#d699b6",
           neutral: "#f2efdf",
