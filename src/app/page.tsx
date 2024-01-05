@@ -24,15 +24,13 @@ import {
 
 import Headerbar from "@/lib/components/Headerbar";
 import { kaushan_script } from "@/lib/fonts";
-import images from "@/lib/images";
-import LandingImage from "@/lib/images/LandingImage.jpg";
-import ProfileImage from "@/lib/images/ProfileImage.jpg";
+import { images, LandingImage, ProfileImage } from "@/lib/images";
 
 // import PanoImage from "@/lib/images/nanhu/20220804-_MG_1207-全景.jpg";
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
-  const { scrollX, scrollYProgress } = useScroll();
+  // const { theme, setTheme } = useTheme();
+  const { scrollY, scrollYProgress } = useScroll();
   const [windowHeight, setWindowHeight] = useState(0);
 
   useEffect(() => {
@@ -57,7 +55,11 @@ export default function Home() {
       </div>
       <div className="flex max-h-[764px] w-full flex-col items-center justify-center">
         <Skeleton className="w-full">
-          <Mask src={LandingImage.src} className="w-full rounded-none" />
+          <Mask
+            alt="An Image of Nanhu Cirque in mist view from above"
+            src={LandingImage.src}
+            className="w-full rounded-none"
+          />
         </Skeleton>
 
         <div
@@ -83,8 +85,9 @@ export default function Home() {
         <section className="bottom-0 flex flex-col text-left md:max-w-[50%]">
           <h2 className="mb-4 text-2xl font-bold">About Me</h2>
           <p className="hyphens-auto text-lg">
-            Hi, I'm Shih-Chi (Charles) Shao. I'm a hobbist photographer with
-            specialty in landscape and urban photograpy. <br />
+            Hi, I'm <a className=" text-primary">Shih-Chi (Charles) Shao</a>.
+            I'm a hobbist photographer with specialty in landscape and urban
+            photograpy. <br />
             <br />
             I love finding the unseen beauty in the world and capturing it with
             my camera. With my knowledge in photography and design, I want to
@@ -98,7 +101,7 @@ export default function Home() {
           <Mask
             variant="circle"
             src={ProfileImage.src}
-            className="mb-4 max-w-[50%] rounded-none"
+            className="my-4 max-w-[80%] rounded-none"
           />
           <h2 className="text-2xl font-bold">Contact Information</h2>
           <div className="flex flex-row gap-2 text-lg">
@@ -109,13 +112,11 @@ export default function Home() {
           </div>
           <div className="flex flex-row gap-2 text-lg">
             <p>{"Phone:"}</p>
-            <Link target="_blank" href="">
-              0987-654-321
-            </Link>
+            <Link target="_blank">0987-654-321</Link>
           </div>
         </section>
       </div>
-      <div className="my-4 max-w-[80%] md:max-w-[50%]">
+      <div className="mb-4 max-w-[80%] md:max-w-[50%]">
         <Carousel display="numbered" width="full">
           {images.map((image, index) => (
             <Carousel.Item src={image.src} className="rounded" key={index} />
