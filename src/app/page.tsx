@@ -8,6 +8,7 @@ import {
   Skeleton,
   Tooltip,
   Divider,
+  Link,
 } from "react-daisyui";
 import { useTheme } from "react-daisyui";
 import { IoIosInformationCircle } from "react-icons/io";
@@ -25,6 +26,7 @@ import Headerbar from "@/lib/components/Headerbar";
 import { kaushan_script } from "@/lib/fonts";
 import images from "@/lib/images";
 import LandingImage from "@/lib/images/LandingImage.jpg";
+import ProfileImage from "@/lib/images/ProfileImage.jpg";
 
 // import PanoImage from "@/lib/images/nanhu/20220804-_MG_1207-全景.jpg";
 
@@ -65,7 +67,7 @@ export default function Home() {
             className={`text-4xl text-info md:text-6xl `}
             style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)" }}
           >
-            Welcome to my Portfolio
+            Rain in the vicinity
           </p>
         </div>
         <Tooltip
@@ -76,6 +78,42 @@ export default function Home() {
         >
           <IoIosInformationCircle color="white" size="1.5rem" />
         </Tooltip>
+      </div>
+      <div className="my-4 flex h-auto flex-wrap justify-center gap-8 bg-secondary px-4 py-8 md:px-24">
+        <section className="bottom-0 flex flex-col text-left md:max-w-[50%]">
+          <h2 className="mb-4 text-2xl font-bold">About Me</h2>
+          <p className="hyphens-auto text-lg">
+            Hi, I'm Shih-Chi (Charles) Shao. I'm a hobbist photographer with
+            specialty in landscape and urban photograpy. <br />
+            <br />
+            I love finding the unseen beauty in the world and capturing it with
+            my camera. With my knowledge in photography and design, I want to
+            create inmersive experience that are not only aesthetically pleasing
+            but also meaningful. <br />
+            Recently I've start to learn web developing, I'm pursuing to build
+            applications with enjoyable user interface and user experience.
+          </p>
+        </section>
+        <section className=" flex flex-col items-center md:w-[30%]">
+          <Mask
+            variant="circle"
+            src={ProfileImage.src}
+            className="mb-4 max-w-[50%] rounded-none"
+          />
+          <h2 className="text-2xl font-bold">Contact Information</h2>
+          <div className="flex flex-row gap-2 text-lg">
+            <p>{"Email:"}</p>
+            <Link target="_blank" href="mailto:shao2001@gmail.com">
+              shao2001@gmail.com
+            </Link>
+          </div>
+          <div className="flex flex-row gap-2 text-lg">
+            <p>{"Phone:"}</p>
+            <Link target="_blank" href="">
+              0987-654-321
+            </Link>
+          </div>
+        </section>
       </div>
       <div className="my-4 max-w-[80%] md:max-w-[50%]">
         <Carousel display="numbered" width="full">

@@ -18,7 +18,7 @@ export default function Headerbar() {
 
   return (
     <Navbar className="glass justify-between bg-secondary">
-      <div className={`mx-8 ${kaushan_script.className}`}>
+      <div className={`${kaushan_script.className}`}>
         <Divider>-</Divider>
         <a href="/" className="text-[4rem]">
           Shih-Chi Shao
