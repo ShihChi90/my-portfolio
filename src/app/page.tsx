@@ -24,7 +24,7 @@ import {
 
 import Headerbar from "@/lib/components/Headerbar";
 import { kaushan_script } from "@/lib/fonts";
-import { images, LandingImage, ProfileImage } from "@/lib/images";
+import { nanhuImages, LandingImage, ProfileImage } from "@/lib/images";
 
 // import PanoImage from "@/lib/images/nanhu/20220804-_MG_1207-全景.jpg";
 
@@ -119,7 +119,7 @@ export default function Home() {
       </div>
       <div className="mb-4 max-w-[80%] md:max-w-[50%]">
         <Carousel display="numbered" width="full">
-          {images.map((image, index) => (
+          {nanhuImages.map((image, index) => (
             <Carousel.Item src={image.src} className="rounded" key={index} />
           ))}
         </Carousel>

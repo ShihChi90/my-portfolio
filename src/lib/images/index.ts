@@ -6,5 +6,5 @@ import nanhu3 from "./nanhu/20220803-_MG_1024_c.jpg";
 
 // import more images if needed
 
-const images = [nanhu1, nanhu2, nanhu3];
-export { images, LandingImage, ProfileImage };
+const nanhuImages = [nanhu1, nanhu2, nanhu3];
+export { nanhuImages, LandingImage, ProfileImage };
